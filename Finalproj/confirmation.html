@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 1200px;
+            height: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase.</p>
+        <p><strong>Name:</strong> <span id="display-name"></span></p>
+        <p><strong>Email:</strong> <span id="display-email"></span></p>
+        <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+        <p><strong>Address:</strong> <span id="display-address"></span></p>
+        <button class="back-button" onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script>
+        document.getElementById('display-name').textContent = localStorage.getItem('name');
+        document.getElementById('display-email').textContent = localStorage.getItem('email');
+        document.getElementById('display-phone').textContent = localStorage.getItem('phone');
+        document.getElementById('display-address').textContent = localStorage.getItem('address');
+
+        function goBack() {
+            window.location.href = 'homepage.html';
+        }
+    </script>
+</body>
+</html>
